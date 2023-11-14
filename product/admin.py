@@ -8,8 +8,8 @@ class AdminServices(admin.ModelAdmin):
     search_fields = ['title']
 
 admin.site.register(Portfolio,AdminServices)
-admin.site.register(Skills)
+# admin.site.register(Skills)
 admin.site.register(Category)
-admin.site.register(Team_Members)
-admin.site.register(Comment)
-admin.site.register(Reply)
+# admin.site.register(Team_Members)
+# admin.site.register(Comment)
+# admin.site.register(Reply)
