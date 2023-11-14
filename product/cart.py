@@ -1,4 +1,4 @@
-from .models import Course
+from .models import Portfolio
 class Cart:
     def __init__(self, request):
         """
@@ -54,7 +54,7 @@ class Cart:
         Iterate over all products
         """
         product_ids = self.cart.keys()
-        products = Course.objects.filter(id__in=product_ids)
+        products = Portfolio.objects.filter(id__in=product_ids)
         cart = self.cart.copy()#generator empty list . use copy for keep base cart
         for product in products:
             cart[str(product.id)]['product_object'] = product
@@ -80,7 +80,7 @@ class Cart:
         Calculate total price if quantity for all products is one
         """
         product_ids = self.cart.keys()
-        products = Course.objects.filter(id__in=product_ids)
+        products = Portfolio.objects.filter(id__in=product_ids)
         return sum(product.price for product in products)
 
     def get_total_price_some_quantity(self):
@@ -90,6 +90,6 @@ class Cart:
         product_quantity = list(self.cart.values())
         all_quantity = [i['quantity'] for i in product_quantity]
         product_id = list(self.cart.keys())
-        products = Course.objects.filter(id__in=product_id)
+        products = Portfolio.objects.filter(id__in=product_id)
         price_list = [product.price for product in products]
         return (sum(price_list[i]*all_quantity[i] for i in range(len(all_quantity))))
