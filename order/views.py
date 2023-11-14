@@ -1,7 +1,8 @@
 
 from django.shortcuts import redirect
 from .forms import OrderByFrom
-from django.views.generic import CreateView, LoginRequiredMixin
+from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from product.cart import Cart
 from .models import *
 
