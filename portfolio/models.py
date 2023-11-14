@@ -46,3 +46,45 @@ class Portfolio(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     
+    class Meta:
+        ordering = ('-created_date',)
+
+    def __str__(self):
+        return self.title
+    
+    def snip(self):
+        return self.content[:20] + '...'
+    
+    def capt(self):
+        return self.title.capitalize()
+    
+class Comment(models.Model):
+    which_portfolio = models.ForeignKey(Portfolio,on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=100)
+    message = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+
+    class Meta:
+        
+        ordering = ['-created_date']
+
+    def __str__(self):
+        return self.name
+
+class Reply(models.Model):
+    which_comment = models.ForeignKey(Comment,on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    message = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+    status = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-created_date']
+
+    def __str__(self):
+        return self.name
+    
+
