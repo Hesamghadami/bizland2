@@ -1,3 +1,13 @@
 from django.shortcuts import render
+from .cart import Cart
 
-# Create your views here.
+    
+class PaymentView(TemplateView):
+    template_name = 'course/cart.html'
+
+    def post(self, request, *args, **kwargs):
+        cart = Cart(request)
+        cart.clear()
+        return redirect(request.path_info)
+
+
