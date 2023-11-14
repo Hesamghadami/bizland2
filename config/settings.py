@@ -43,7 +43,6 @@ COMPRESS_ENABLED = True
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 
 
@@ -129,7 +128,7 @@ SANDBOX = True
 
 
 STATIC_ROOT = BASE_DIR.joinpath('/static')
-MEDIA_ROOT = BASE_DIR.joinpath('media/')
+MEDIA_ROOT = BASE_DIR.joinpath('media')
 
 STATICFILES_DIRS = [
     BASE_DIR/'static',
