@@ -24,7 +24,7 @@ class CustomBaseUserManager(BaseUserManager):
 
 
 
-class CustomUser(AbstractBaseUser, PermissionsMixin):
+class CustomeUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     username  = models.CharField(max_length=100, unique=True)
     is_staff = models.BooleanField(default=False)
@@ -44,7 +44,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     
 
 class Profile(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomeUser, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     image = models.ImageField(upload_to='users', default='user.jpg')
