@@ -1,6 +1,6 @@
 from django.db import models
 from accounts.models import CustomeUser
-from courses.models import Course
+from product.models import Portfolio
 
 
 class OrderBy(models.Model):
@@ -30,7 +30,7 @@ class OrderBy(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(OrderBy, on_delete=models.CASCADE, related_name='items')
-    product = models.ForeignKey(Course, on_delete=models.CASCADE)
+    product = models.ForeignKey(Portfolio, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     price = models.PositiveIntegerField()
 

@@ -1,9 +1,4 @@
 from django.urls import path
-from .views import *
-
-app_name = 'payment'
-
-from django.urls import path
 from . import views
 
 app_name = 'payment'
