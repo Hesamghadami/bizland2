@@ -27,6 +27,7 @@
   <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
   <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
   
 
   <!-- Template Main CSS File -->
@@ -73,6 +74,8 @@
           
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
+          <li><a href={% url 'portfolio:cart' %}>style= "color:cyan; font-size:10px" {{ cart|length}}<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+
               {% for cat in category %}
               <li><a href={% url 'portfolio:portfolio_cat' cat=cat.name %}>{{cat.name}}</a></li>
               {% endfor %}
