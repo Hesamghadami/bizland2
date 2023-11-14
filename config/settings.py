@@ -128,3 +128,10 @@ AUTH_USER_MODEL = 'accounts.CustomeUser'
 SANDBOX = True
 
 
+STATIC_ROOT = BASE_DIR.joinpath('/static')
+MEDIA_ROOT = BASE_DIR.joinpath('media/')
+
+STATICFILES_DIRS = [
+    BASE_DIR/'static',
+    BASE_DIR/'media',
+]
