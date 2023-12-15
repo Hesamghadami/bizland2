@@ -6,6 +6,7 @@ from .forms import AuthenticationForm,EditProfile,CustomUserCreation
 from django.views.generic import FormView, CreateView, UpdateView, TemplateView
 
 
+
 class LoginView(FormView):
     template_name = 'registration/login.html'
     form_class = AuthenticationForm
