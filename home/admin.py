@@ -6,3 +6,4 @@ from .models import *
 
 admin.site.register(NewsLetter)
 admin.site.register(ContactUs)
+
