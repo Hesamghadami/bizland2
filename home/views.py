@@ -2,6 +2,7 @@ from django.shortcuts import render ,redirect
 from django.views.generic import ListView
 from .models import *
 
+
 class HomeListView(ListView):
     template_name = 'root/index.html'
     context_object_name = 'service'
