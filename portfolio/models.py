@@ -11,12 +11,16 @@ class Category(models.Model):
 
 class Skills(models.Model):
     name = models.CharField(max_length=100)
+
+
     
     def __str__(self):
         return self.name
     
 
 class Team_Members(models.Model):
+
+    
     info = models.ForeignKey(CustomeUser,on_delete=models.CASCADE)
     skills = models.ForeignKey(Skills,on_delete=models.CASCADE)
     description = models.TextField()
