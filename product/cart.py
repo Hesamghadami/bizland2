@@ -8,6 +8,7 @@ class Cart:
         self.session = request.session
         cart = self.session.get('cart')
         if cart is None:
+            
             cart = self.session['cart'] = {}
         self.cart = cart
 
